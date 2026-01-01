@@ -7,6 +7,17 @@ spring:
     port: ${RABBITMQ_PORT:5672}
     username: ${RABBITMQ_USER:guest}
     password: ${RABBITMQ_PASS:guest}
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: sravanthigurram955@gmail.com
+    password: blmvcdbtosuvhlzt
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
 
 eureka:
   client:
