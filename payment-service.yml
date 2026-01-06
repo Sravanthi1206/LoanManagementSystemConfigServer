@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/lms_payments?createDatabaseIfNotExist=true
+    url: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/lms_payment?createDatabaseIfNotExist=true
     username: ${MYSQL_USER}
     password: ${MYSQL_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
