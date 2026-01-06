@@ -4,6 +4,11 @@ spring:
       uri: mongodb://${MONGODB_USER}:${MONGODB_PASS}@mongodb:27017/lms_notifications?authSource=admin
   rabbitmq:
     host: rabbitmq
+    username: ${RABBITMQ_USER}
+    password: ${RABBITMQ_PASS}
+  mail:
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
 
 eureka:
   client:
