@@ -9,8 +9,6 @@ spring:
           uri: lb://identity-service
           predicates:
             - Path=/auth/**
-          filters:
-            - AuthenticationFilter
         - id: identity-users
           uri: lb://identity-service
           predicates:
