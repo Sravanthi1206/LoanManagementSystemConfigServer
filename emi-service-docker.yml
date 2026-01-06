@@ -1,7 +1,8 @@
 spring:
-  data:
-    mongodb:
-      uri: mongodb://${MONGODB_USER}:${MONGODB_PASS}@mongodb:27017/lms_emi?authSource=admin
+  datasource:
+    url: jdbc:mysql://mysql:3306/lms_emi?createDatabaseIfNotExist=true
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
 
 eureka:
   client:

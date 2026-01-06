@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/lms_emi?createDatabaseIfNotExist=true
+    url: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/lms_emi?createDatabaseIfNotExist=true
     username: ${MYSQL_USER}
     password: ${MYSQL_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -13,6 +13,6 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://${EUREKA_HOST}:${EUREKA_PORT}/eureka
   instance:
     prefer-ip-address: true
