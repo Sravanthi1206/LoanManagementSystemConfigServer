@@ -1,0 +1,73 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: identity-auth
+          uri: lb://identity-service
+          predicates:
+            - Path=/auth/**
+          filters:
+            - AuthenticationFilter
+        - id: identity-users
+          uri: lb://identity-service
+          predicates:
+            - Path=/users/**
+          filters:
+            - AuthenticationFilter
+        - id: identity-admin
+          uri: lb://identity-service
+          predicates:
+            - Path=/admin/**
+          filters:
+            - AuthenticationFilter
+        - id: loan-service
+          uri: lb://loan-service
+          predicates:
+            - Path=/loans/**
+          filters:
+            - AuthenticationFilter
+        - id: dashboard-service
+          uri: lb://loan-service
+          predicates:
+            - Path=/dashboard/**
+          filters:
+            - AuthenticationFilter
+        - id: wallet-service
+          uri: lb://loan-service
+          predicates:
+            - Path=/wallet/**
+          filters:
+            - AuthenticationFilter
+        - id: emi-service
+          uri: lb://emi-service
+          predicates:
+            - Path=/emi/**
+          filters:
+            - AuthenticationFilter
+        - id: payment-service
+          uri: lb://payment-service
+          predicates:
+            - Path=/payments/**
+          filters:
+            - AuthenticationFilter
+        - id: notification-service
+          uri: lb://notification-service
+          predicates:
+            - Path=/notifications/**
+          filters:
+            - AuthenticationFilter
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_FIRST
+
+jwt:
+  secret: ${JWT_SECRET}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true

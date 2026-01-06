@@ -1,0 +1,11 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://${MONGODB_USER}:${MONGODB_PASS}@mongodb:27017/lms_notifications?authSource=admin
+  rabbitmq:
+    host: rabbitmq
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka
