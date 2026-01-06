@@ -16,3 +16,9 @@ eureka:
   client:
     service-url:
       defaultZone: http://discovery-server:8761/eureka
+
+app:
+  seed:
+    root-admin:
+      email: ${ROOT_ADMIN_EMAIL}
+      password: ${ROOT_ADMIN_PASSWORD}

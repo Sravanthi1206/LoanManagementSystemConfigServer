@@ -25,3 +25,9 @@ eureka:
       defaultZone: http://${EUREKA_HOST}:${EUREKA_PORT}/eureka
   instance:
     prefer-ip-address: true
+
+app:
+  seed:
+    root-admin:
+      email: ${ROOT_ADMIN_EMAIL}
+      password: ${ROOT_ADMIN_PASSWORD}
