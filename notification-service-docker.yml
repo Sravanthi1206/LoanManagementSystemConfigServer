@@ -4,6 +4,7 @@ spring:
       uri: mongodb://${MONGODB_USER}:${MONGODB_PASS}@mongodb:27017/lms_notifications?authSource=admin
   rabbitmq:
     host: rabbitmq
+    port: 5672
     username: ${RABBITMQ_USER}
     password: ${RABBITMQ_PASS}
   mail:
