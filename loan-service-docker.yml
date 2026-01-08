@@ -3,6 +3,12 @@ spring:
     url: jdbc:mysql://mysql:3306/lms_loans?createDatabaseIfNotExist=true
     username: ${MYSQL_USER}
     password: ${MYSQL_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
   rabbitmq:
     host: rabbitmq
     port: 5672
