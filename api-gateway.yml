@@ -61,14 +61,14 @@ spring:
         - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_FIRST
 
 jwt:
-  secret: ${JWT_SECRET}
+  secret: 5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437
 
 cors:
-  allowed-origins: ${CORS_ALLOWED_ORIGINS}
+  allowed-origins: http://localhost:4200
 
 eureka:
   client:
     service-url:
-      defaultZone: http://${EUREKA_HOST}:${EUREKA_PORT}/eureka
+      defaultZone: http://localhost:8761/eureka
   instance:
     prefer-ip-address: true
